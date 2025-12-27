@@ -54,7 +54,6 @@ export function ProductDetailPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-indigo-50/30">
-      {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-slate-100 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <Link
@@ -67,12 +66,9 @@ export function ProductDetailPage() {
         </div>
       </header>
 
-      {/* Product Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Image Gallery */}
           <div className="space-y-4">
-            {/* Main Image */}
             <div className="aspect-square bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100">
               <img
                 src={images[selectedImageIndex]}
@@ -81,7 +77,6 @@ export function ProductDetailPage() {
               />
             </div>
 
-            {/* Thumbnails */}
             {images.length > 1 && (
               <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-hide">
                 {images.map((image, index) => (
@@ -105,9 +100,7 @@ export function ProductDetailPage() {
             )}
           </div>
 
-          {/* Product Info */}
           <div className="space-y-6">
-            {/* Category & Title */}
             <div>
               <span className="text-sm font-medium text-indigo-600 uppercase tracking-wider">
                 {product.category}
@@ -118,7 +111,6 @@ export function ProductDetailPage() {
               )}
             </div>
 
-            {/* Rating */}
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((star) => (
@@ -141,7 +133,6 @@ export function ProductDetailPage() {
               </span>
             </div>
 
-            {/* Price */}
             <div className="flex items-baseline gap-3">
               <span className="text-3xl font-bold text-slate-900">
                 ${discountedPrice.toFixed(2)}
@@ -158,7 +149,6 @@ export function ProductDetailPage() {
               )}
             </div>
 
-            {/* Description */}
             <div>
               <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wider mb-2">
                 Description
@@ -166,7 +156,6 @@ export function ProductDetailPage() {
               <p className="text-slate-600 leading-relaxed">{product.description}</p>
             </div>
 
-            {/* Stock Status */}
             <div className="flex items-center gap-2">
               <div
                 className={`w-3 h-3 rounded-full ${
@@ -183,7 +172,6 @@ export function ProductDetailPage() {
               <span className="text-sm text-slate-400">({product.stock} in stock)</span>
             </div>
 
-            {/* Product Details */}
             <div className="bg-slate-50 rounded-xl p-4 space-y-3">
               <h3 className="text-sm font-semibold text-slate-700 uppercase tracking-wider">
                 Product Details
@@ -218,7 +206,6 @@ export function ProductDetailPage() {
               </div>
             </div>
 
-            {/* Tags */}
             {product.tags.length > 0 && (
               <div className="flex flex-wrap gap-2">
                 {product.tags.map((tag) => (
@@ -234,7 +221,6 @@ export function ProductDetailPage() {
           </div>
         </div>
 
-        {/* Reviews Section */}
         {product.reviews.length > 0 && (
           <section className="mt-12">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Customer Reviews</h2>
@@ -276,4 +262,3 @@ export function ProductDetailPage() {
     </div>
   );
 }
-

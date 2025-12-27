@@ -14,7 +14,6 @@ export function ProductCard({ product }: ProductCardProps) {
       to={`/product/${product.id}`}
       className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-100 hover:shadow-xl hover:border-slate-200 transition-all duration-300 flex flex-col"
     >
-      {/* Image Container */}
       <div className="relative aspect-square overflow-hidden bg-slate-50">
         <img
           src={product.thumbnail}
@@ -33,26 +32,21 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
       </div>
 
-      {/* Content */}
       <div className="p-4 flex flex-col flex-1">
-        {/* Category */}
         <span className="text-xs font-medium text-indigo-600 uppercase tracking-wider mb-1">
           {product.category}
         </span>
 
-        {/* Title */}
         <h3 className="font-semibold text-slate-900 text-sm leading-tight mb-2 line-clamp-2 group-hover:text-indigo-600 transition-colors">
           {product.title}
         </h3>
 
-        {/* Rating */}
         <div className="flex items-center gap-1 mb-3">
           <StarIcon className="w-4 h-4 text-amber-400" filled />
           <span className="text-sm font-medium text-slate-700">{product.rating.toFixed(1)}</span>
           <span className="text-xs text-slate-400">({product.reviews.length} reviews)</span>
         </div>
 
-        {/* Price */}
         <div className="mt-auto flex items-center gap-2">
           <span className="text-lg font-bold text-slate-900">
             ${discountedPrice.toFixed(2)}
@@ -67,4 +61,3 @@ export function ProductCard({ product }: ProductCardProps) {
     </Link>
   );
 }
-
